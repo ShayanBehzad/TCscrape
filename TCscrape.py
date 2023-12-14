@@ -16,10 +16,10 @@ r = requests.get('https://www.truecar.com/used-cars-for-sale/listings/%s/' %(x))
 soup = BeautifulSoup(r.text,'html.parser')
 adds = soup.find_all('div',class_="card-content order-3 vehicle-card-body",limit=30)
 
-# database estabelisher
-mydb = mysql.connector.connect(user='root', password='sh.bisto5',
+# database establiser
+mydb = mysql.connector.connect(user='root', password='password',
                                   host='localhost',
-                                  database= 'cardb')
+                                  database= 'databasename')
 mycursor = mydb.cursor()
 
 # if the table already elxists, drop the table and create a new one
